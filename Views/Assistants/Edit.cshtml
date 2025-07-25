@@ -1,0 +1,55 @@
+﻿@model eShift.Models.Assistant
+
+@{
+    ViewData["Title"] = "Edit Assistants";
+}
+
+<h2>Edit Assistants</h2>
+
+<h4>Driver</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="AssistantId" />
+
+            <div class="form-group">
+                <label class="control-label">Assistant ID</label>
+
+                <input asp-for="AssistantId" class="form-control" readonly />
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="AssistantName" class="control-label"></label>
+
+                <input asp-for="AssistantName" class="form-control" />
+
+                <span asp-validation-for="AssistantName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssistantPhone" class="control-label"></label>
+
+                <input asp-for="AssistantPhone" class="form-control" />
+
+                <span asp-validation-for="AssistantPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

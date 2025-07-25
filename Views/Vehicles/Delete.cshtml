@@ -1,0 +1,35 @@
+﻿@model eShift.Models.Vehicle
+
+@{
+    ViewData["Title"] = "Delete Vehicle";
+}
+
+<h2>Delete Vehicle</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Vehicle</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Vehicle ID</dt>
+        <dd class="col-sm-10">@Model.VehicleId</dd>
+
+        <dt class="col-sm-2">Vehicle Model</dt>
+        <dd class="col-sm-10">@Model.VehicleModel</dd>
+
+        <dt class="col-sm-2">License Number</dt>
+        <dd class="col-sm-10">@Model.VehicleLicensenum</dd>
+
+        <dt class="col-sm-2">Vehicle Type</dt>
+        <dd class="col-sm-10">@Model.VehicleType</dd>
+
+        <dt class="col-sm-2">Capacity (Kg)</dt>
+        <dd class="col-sm-10">@Model.CapacityKg</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="VehicleId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

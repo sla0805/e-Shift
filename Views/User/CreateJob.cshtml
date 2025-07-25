@@ -1,0 +1,48 @@
+﻿@model eShift.Models.Job
+
+@{
+    ViewData["Title"] = "Create Delivery";
+}
+
+<h2>Create Delivery</h2>
+
+<form asp-action="CreateJob" asp-controller="User" method="post">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        <label asp-for="PickupLocation"></label>
+        <input asp-for="PickupLocation" class="form-control" />
+        <span asp-validation-for="PickupLocation" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DeliveryLocation"></label>
+        <input asp-for="DeliveryLocation" class="form-control" />
+        <span asp-validation-for="DeliveryLocation" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="OrderDate"></label>
+        <input asp-for="OrderDate" type="date" class="form-control" />
+        <span asp-validation-for="OrderDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ScheduledDate"></label>
+        <input asp-for="ScheduledDate" type="date" class="form-control" />
+        <span asp-validation-for="ScheduledDate" class="text-danger"></span>
+    </div>
+
+    <div class="mt-4 d-flex align-items-center mb-3">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a asp-action="Index" asp-controller="User" class="btn btn-secondary">Back to Dashboard</a>
+    </div>
+
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

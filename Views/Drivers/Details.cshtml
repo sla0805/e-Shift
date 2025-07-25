@@ -1,0 +1,29 @@
+﻿@model eShift.Models.Driver
+
+@{
+    ViewData["Title"] = "Driver Details";
+}
+
+<h2>Driver Details</h2>
+
+<div>
+    <h4>Driver</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Driver ID</dt>
+        <dd class="col-sm-10">@Model.DriverId</dd> @* Updated property name *@
+
+        <dt class="col-sm-2">Driver Name</dt>
+        <dd class="col-sm-10">@Model.DriverName</dd> @* Updated property name *@
+
+        <dt class="col-sm-2">License Number</dt>
+        <dd class="col-sm-10">@Model.DriverLicensenum</dd> @* Updated property name *@
+
+        <dt class="col-sm-2">Phone</dt>
+        <dd class="col-sm-10">@Model.DriverPhone</dd> @* Updated property name *@
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DriverId">Edit</a> | @* Updated property name *@
+    <a asp-action="Index">Back to List</a>
+</div>

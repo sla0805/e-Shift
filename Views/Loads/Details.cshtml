@@ -1,0 +1,53 @@
+﻿@model eShift.Models.Load
+
+@{
+    ViewData["Title"] = "Load Details";
+}
+
+<h2>Load Details</h2>
+
+<div>
+    <h4>Load</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Job)
+        </dt>
+        <dd class="col-sm-10">
+            Job @Model.Job?.JobId: @Model.Job?.PickupLocation to @Model.Job?.DeliveryLocation
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Product)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Product?.ProductName
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductQuantity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductQuantity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductContainer)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductContainer)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LoadWeightKg)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LoadWeightKg) kg
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.LoadId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

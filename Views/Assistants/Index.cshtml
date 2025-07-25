@@ -1,0 +1,87 @@
+﻿@model PaginatedList<eShift.Models.Assistant>
+
+@{
+    ViewData["Title"] = "Assistants List";
+    var currentSort = ViewData["CurrentSort"] as string;
+}
+
+<h1>Assistants List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search by ID, Name, or Phone..."
+               name="SearchString" value="@ViewData["CurrentFilter"]" />
+        <button type="submit" class="btn btn-outline-secondary" title="Search">
+            <i class="fas fa-search"></i> Search
+        </button>
+        <a asp-action="Index" class="btn btn-outline-secondary" title="Clear Filter">
+            <i class="fas fa-times"></i> Clear
+        </a>
+    </div>
+</form>
+<p>
+    <a asp-action="DownloadCsv" asp-route-searchString="@ViewData["CurrentFilter"]" asp-route-sortOrder="@ViewData["CurrentSort"]">Download Current View CSV</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["IdSortParm"]" asp-route-searchString="@ViewData["CurrentFilter"]">Assistant ID</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-searchString="@ViewData["CurrentFilter"]">Assistant Name</a>
+            </th>
+            <th>Assistant Phone</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.AssistantId)</td>
+                <td>@Html.DisplayFor(modelItem => item.AssistantName)</td>
+                <td>@Html.DisplayFor(modelItem => item.AssistantPhone)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.AssistantId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.AssistantId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.AssistantId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    <a asp-controller="Admin" asp-action="Index">Back to Admin Dashboard</a>
+</p>
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+            <a class="page-link" asp-action="Index"
+               asp-route-pageNumber="@(Model.PageIndex - 1)"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-searchString="@ViewData["CurrentFilter"]">Previous</a>
+        </li>
+
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                <a class="page-link" asp-action="Index"
+                   asp-route-pageNumber="@i"
+                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                   asp-route-searchString="@ViewData["CurrentFilter"]">@i</a>
+            </li>
+        }
+
+        <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+            <a class="page-link" asp-action="Index"
+               asp-route-pageNumber="@(Model.PageIndex + 1)"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-searchString="@ViewData["CurrentFilter"]">Next</a>
+        </li>
+    </ul>
+</nav>

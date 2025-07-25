@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "User Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary">Welcome to Your e-Shift Dashboard</h1>
+        <p class="lead text-muted">Easily manage your deliveries and account here.</p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+        <!-- Update Account Info -->
+        <div class="col">
+            <div class="card border-0 shadow-lg h-100 hover-shadow transition">
+                <div class="card-body text-center d-flex flex-column align-items-center">
+                    <i class="bi bi-person-lines-fill icon-large text-info mb-3"></i>
+                    <h5 class="card-title fw-semibold">Update Your Account Info</h5>
+                    <p class="card-text text-muted">Complete your profile to become a verified customer.</p>
+                    <a asp-controller="User" asp-action="UpdateAccountInfo" class="btn btn-outline-info mt-auto w-100">
+                        Update Account
+                    </a>
+                </div>
+                <a asp-controller="User" asp-action="ChangePassword" class="btn btn-outline-secondary mt-2">
+                    Change Password
+                </a>
+
+            </div>
+        </div>
+
+        <!-- Create New Delivery -->
+        <div class="col">
+            <div class="card border-0 shadow-lg h-100 hover-shadow transition">
+                <div class="card-body text-center d-flex flex-column align-items-center">
+                    <i class="bi bi-truck-flatbed icon-large text-success mb-3"></i>
+                    <h5 class="card-title fw-semibold">Create New Delivery</h5>
+                    <p class="card-text text-muted">Start a new request to shift your household goods.</p>
+                    <a asp-controller="User" asp-action="CreateJob" class="btn btn-outline-success mt-auto w-100">
+                        Create Delivery
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Your Deliveries -->
+        <div class="col">
+            <div class="card border-0 shadow-lg h-100 hover-shadow transition">
+                <div class="card-body text-center d-flex flex-column align-items-center">
+                    <i class="bi bi-box-seam icon-large text-warning mb-3"></i>
+                    <h5 class="card-title fw-semibold">View / Update Deliveries</h5>
+                    <p class="card-text text-muted">Track your deliveries or make changes to existing requests.</p>
+                    <a asp-controller="User" asp-action="ViewMyJobs" class="btn btn-outline-warning mt-auto w-100">
+                        My Deliveries
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    <style>
+        .icon-large {
+            font-size: 3.5rem;
+        }
+
+        .hover-shadow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+
+        .transition {
+            transition: all 0.3s ease;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+        }
+
+        .btn {
+            font-size: 1rem;
+        }
+    </style>
+}

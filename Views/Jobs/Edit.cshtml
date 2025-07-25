@@ -1,0 +1,77 @@
+﻿@model eShift.Models.Job
+
+@{
+    ViewData["Title"] = "Edit Job";
+}
+
+<h2>Edit Job</h2>
+
+<h4>Job</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="JobId" />
+
+            <div class="form-group">
+                <label class="control-label">Job ID</label>
+                <input asp-for="JobId" class="form-control" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CustId" class="control-label"></label>
+                <input class="form-control" value="@Model.CustId" readonly />
+                <input type="hidden" asp-for="CustId" /> 
+                <span asp-validation-for="CustId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PickupLocation" class="form-label"></label>
+                <input asp-for="PickupLocation" class="form-control" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DeliveryLocation" class="form-label"></label>
+                <input asp-for="DeliveryLocation" class="form-control" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="OrderDate" class="form-label"></label>
+                <input asp-for="OrderDate" class="form-control" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ScheduledDate" class="form-label"></label>
+                <input asp-for="ScheduledDate" class="form-control" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DeliveryDate" class="control-label"></label>
+                <input asp-for="DeliveryDate" class="form-control" type="date" />
+                <span asp-validation-for="DeliveryDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="JobStatus" class="control-label"></label>
+                <select asp-for="JobStatus" asp-items="ViewBag.JobStatusOptions" class="form-control"></select>
+                <span asp-validation-for="JobStatus" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

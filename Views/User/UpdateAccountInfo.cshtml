@@ -1,0 +1,80 @@
+﻿@model eShift.Models.Customer 
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+
+<div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+@{
+    ViewData["Title"] = "Update Account Info";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h1 class="display-4 mb-4 text-primary">@ViewData["Title"]</h1>
+    <p class="lead">Please complete or update your customer profile.</p>
+
+    <hr class="my-4">
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+            <div class="card shadow-sm p-4">
+                <div class="card-body">
+                    <form asp-controller="User" asp-action="UpdateAccountInfo" method="post">
+                        @Html.AntiForgeryToken()
+
+                        <! Hidden field for CustId for updates>     
+                        <input type="hidden" asp-for="CustId" />
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="CustEmail" class="form-label"></label>
+                            <input asp-for="CustEmail" class="form-control" readonly /> <! Email is read-only, controlled by Identity>
+                            <span asp-validation-for="CustEmail" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="CustName" class="form-label"></label>
+                            <input asp-for="CustName" class="form-control" placeholder="Enter your full name" />
+                            <span asp-validation-for="CustName" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="CustPhone" class="form-label"></label>
+                            <input asp-for="CustPhone" class="form-control" placeholder="e.g., +1234567890" />
+                            <span asp-validation-for="CustPhone" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="CustAddress" class="form-label"></label>
+                            <textarea asp-for="CustAddress" class="form-control" rows="3" placeholder="Enter your full address"></textarea>
+                            <span asp-validation-for="CustAddress" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="CustRegisterDate" class="form-label"></label>
+                            <input asp-for="CustRegisterDate" class="form-control" readonly /> <! Display but don't allow user to edit>
+                            <span asp-validation-for="CustRegisterDate" class="text-danger small"></span>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">Save Profile</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-3 text-center">
+        <a asp-controller="User" asp-action="Index" class="text-decoration-none">&larr; Back to Dashboard</a>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

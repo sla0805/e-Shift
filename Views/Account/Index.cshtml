@@ -1,0 +1,61 @@
+﻿@model List<eShift.Models.UserViewModel>
+
+@{
+    ViewData["Title"] = "User Management";
+}
+
+<h2>User Management Dashboard</h2>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Email</td>
+                <td>@(user.IsAdmin ? "Admin" : "User")</td>
+                <td>
+                    @if (!user.IsAdmin)
+                    {
+                        <form asp-action="Promote" method="post">
+                            <input type="hidden" name="id" value="@user.Id" />
+                            <button type="submit" class="btn btn-sm btn-primary" 
+                                onclick="return confirm('Are you sure you want to promote @user.Email to admin user?');">Promote to Admin</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <div class="d-flex align-items-center">
+                            <span class="text-success fw-bold me-2">✔ Already Admin</span>
+                                <form asp-controller="Account" asp-action="Demote" method="post" style="display:inline-block;">
+                                    <input type="hidden" name="id" value="@user.Id" />
+                                    <button type="submit" class="btn btn-sm btn-danger"
+                                            onclick="return confirm('WARNING: Are you sure you want to demote @user.Email?');">
+                                        Demote to User
+                                    </button>
+                                </form> 
+                        </div>
+                    }
+
+                    
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    <a asp-controller="Admin" asp-action="Index">Back to Admin Dashboard</a>
+</p>
+

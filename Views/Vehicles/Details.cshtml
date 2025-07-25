@@ -1,0 +1,32 @@
+﻿@model eShift.Models.Vehicle
+
+@{
+    ViewData["Title"] = "Vehicle Info";
+}
+
+<h2>Vehicle Details</h2>
+
+<div>
+    <h4>Vehicle</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Vehicle ID</dt>
+        <dd class="col-sm-10">@Model.VehicleId</dd>
+
+        <dt class="col-sm-2">Vehicle Model</dt>
+        <dd class="col-sm-10">@Model.VehicleModel</dd>
+
+        <dt class="col-sm-2">License Number</dt>
+        <dd class="col-sm-10">@Model.VehicleLicensenum</dd>
+
+        <dt class="col-sm-2">Vehicle Type</dt>
+        <dd class="col-sm-10">@Model.VehicleType</dd>
+
+        <dt class="col-sm-2">Capacity (Kg)</dt>
+        <dd class="col-sm-10">@Model.CapacityKg</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.VehicleId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

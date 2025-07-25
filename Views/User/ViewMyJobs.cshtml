@@ -1,0 +1,85 @@
+﻿@model IEnumerable<eShift.Models.Job>
+
+<a asp-action="Index" asp-controller="User" class="btn btn-primary mb-3">Back to Dashboard</a>
+
+<h2>My delivery lists</h2>
+
+@foreach (var job in Model)
+{
+    <div class="card mb-3">
+        <div class="card-header">
+            <h4>Job #@job.JobId - Status: @job.JobStatus</h4>
+            <p>
+                <strong>Pickup:</strong> @job.PickupLocation <br />
+                <strong>Delivery:</strong> @job.DeliveryLocation <br />
+                <strong>Order Date:</strong> @job.OrderDate.ToString("yyyy-MM-dd") <br />
+                <strong>Scheduled Date:</strong> @job.ScheduledDate.ToString("yyyy-MM-dd")
+            </p>
+
+            @* Show Edit Job link only if status is Pending *@
+            @if (job.JobStatus == "Pending")
+            {
+                <a asp-action="EditJob" asp-route-id="@job.JobId" class="btn btn-sm btn-primary">Edit Delivery Details</a>
+
+                <form asp-action="DeleteJob" method="post" asp-controller="User" asp-route-id="@job.JobId"
+                      onsubmit="return confirm('Are you sure you want to delete this job and all its items?');" class="d-inline">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-sm btn-outline-danger">
+                        <i class="bi bi-trash"></i> Delete
+                    </button>
+                </form>
+            }
+        </div>
+
+        <div class="card-body">
+            <h5>Loads</h5>
+            @if (job.Loads != null && job.Loads.Any())
+            {
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Container</th>
+                            <th>Weight (kg)</th>
+                            <th>Comments</th>
+                            @if (job.JobStatus == "Pending")
+                            {
+                                <th>Actions</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var load in job.Loads)
+                        {
+                            <tr>
+                                <td>@load.Product?.ProductName</td>
+                                <td>@load.ProductQuantity</td>
+                                <td>@load.ProductContainer</td>
+                                <td>@load.LoadWeightKg</td>
+                                <td>@load.Comment</td>
+
+                                @if (job.JobStatus == "Pending")
+                                {
+                                    <td>
+                                        <a asp-action="EditLoad" asp-route-id="@load.LoadId" class="btn btn-sm btn-secondary">Edit</a>
+                                        <a asp-action="DeleteLoad" asp-route-id="@load.LoadId" class="btn btn-sm btn-secondary">Delete</a>
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>No loads added yet.</p>
+            }
+
+            @if (job.JobStatus == "Pending")
+            {
+                <a asp-action="AddLoad" asp-route-jobId="@job.JobId" class="btn btn-sm btn-success">Add Items</a>
+            }
+        </div>
+    </div>
+}

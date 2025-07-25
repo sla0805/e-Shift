@@ -1,0 +1,257 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = eShift
+build_property.RootNamespace = eShift
+build_property.ProjectDir = D:\BSc\Application\SuLeiAung_E256412_CS6004ES_Coursework_Assignment\goods_shifting\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\BSc\Application\SuLeiAung_E256412_CS6004ES_Coursework_Assignment\goods_shifting
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Account/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Assistants/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzaXN0YW50c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Assistants/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzaXN0YW50c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Assistants/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzaXN0YW50c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Assistants/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzaXN0YW50c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Assistants/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzaXN0YW50c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Customers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Customers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Customers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Customers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Customers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Drivers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJpdmVyc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Drivers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJpdmVyc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Drivers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJpdmVyc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Drivers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJpdmVyc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Drivers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJpdmVyc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Jobs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9ic1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Jobs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9ic1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Jobs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9ic1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Jobs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9ic1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Jobs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9ic1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Loads/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Loads/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Loads/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Loads/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Loads/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hZHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Products/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Products/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Products/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Products/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/TransportAssignments/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNwb3J0QXNzaWdubWVudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/TransportAssignments/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNwb3J0QXNzaWdubWVudHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/TransportAssignments/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNwb3J0QXNzaWdubWVudHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/TransportAssignments/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNwb3J0QXNzaWdubWVudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/TransportAssignments/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNwb3J0QXNzaWdubWVudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/User/AddLoad.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBZGRMb2FkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/User/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/User/CreateJob.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhdGVKb2IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/User/DeleteLoad.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZWxldGVMb2FkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/User/UpdateAccountInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVcGRhdGVBY2NvdW50SW5mby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/User/ViewMyJobs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxWaWV3TXlKb2JzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Vehicles/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Vehicles/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Vehicles/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Vehicles/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Vehicles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/BSc/Application/SuLeiAung_E256412_CS6004ES_Coursework_Assignment/goods_shifting/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-fi8s1k2r0y

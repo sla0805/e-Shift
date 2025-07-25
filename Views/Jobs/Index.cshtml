@@ -1,0 +1,171 @@
+﻿@model PaginatedList<eShift.Models.Job>
+
+@{
+    ViewData["Title"] = "Jobs";
+}
+
+<h2>Jobs</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-controller="Jobs" asp-action="Index" method="get" class="mb-4">
+    <div class="input-group">
+        <input type="text" class="form-control" name="searchString" value="@ViewData["CurrentFilter"]" placeholder="Search by Job ID, Customer, Location, or Status..." />
+        <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i> Search
+        </button>
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-x-lg"></i> Clear
+        </a>
+    </div>
+</form>
+
+<p>
+    <a asp-action="DownloadCsv"
+       asp-route-searchString="@ViewData["CurrentFilter"]"
+       asp-route-sortOrder="@ViewData["CurrentSort"]">Download Current View CSV</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["IdSortParm"]"
+                   asp-route-searchString="@ViewData["CurrentFilter"]">Job ID</a>
+            </th>
+            <th>
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["CustomerNameSortParm"]"
+                   asp-route-searchString="@ViewData["CurrentFilter"]">Customer Name</a>
+            </th>
+            <th>Pickup Location</th>
+            <th>Delivery Location</th>
+            <th>Job Status</th>
+            <th>
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["OrderDateSortParm"]"
+                   asp-route-searchString="@ViewData["CurrentFilter"]">Order Date</a>
+            </th>
+            <th>
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["ScheduledDateSortParm"]"
+                   asp-route-searchString="@ViewData["CurrentFilter"]">Scheduled Date</a>
+            </th>
+            <th>
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["DeliveryDateSortParm"]"
+                   asp-route-searchString="@ViewData["CurrentFilter"]">Delivery Date</a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.JobId</td>
+                <td>@item.Customer?.CustName</td>
+                <td>@item.PickupLocation</td>
+                <td>@item.DeliveryLocation</td>
+                <td>@item.JobStatus</td>
+                <td>@item.OrderDate.ToString("yyyy-MM-dd")</td>
+                <td>@item.ScheduledDate.ToString("yyyy-MM-dd")</td>
+                <td>@item.DeliveryDate?.ToString("yyyy-MM-dd")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.JobId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.JobId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.JobId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Pagination -->
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+            <a class="page-link" asp-action="Index"
+               asp-route-pageNumber="@(Model.PageIndex - 1)"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-searchString="@ViewData["CurrentFilter"]">Previous</a>
+        </li>
+
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                <a class="page-link" asp-action="Index"
+                   asp-route-pageNumber="@i"
+                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                   asp-route-searchString="@ViewData["CurrentFilter"]">@i</a>
+            </li>
+        }
+
+        <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+            <a class="page-link" asp-action="Index"
+               asp-route-pageNumber="@(Model.PageIndex + 1)"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-searchString="@ViewData["CurrentFilter"]">Next</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Chart Section BELOW table & pagination -->
+<h3>Job Status Overview</h3>
+<div style="max-width: 400px; margin-bottom: 20px;">
+    <canvas id="jobStatusChart"></canvas>
+</div>
+
+<!-- Back to Dashboard -->
+<p>
+    <a asp-controller="Admin" asp-action="Index">Back to Admin Dashboard</a>
+</p>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const canvas = document.getElementById('jobStatusChart');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+
+            fetch('@Url.Action("GetJobStatusData", "Jobs")')
+                .then(response => response.json())
+                .then(data => {
+                    const labels = data.map(item => item.status ?? "Unknown");
+                    const counts = data.map(item => item.count);
+
+                    new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                data: counts,
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.6)',
+                                    'rgba(54, 162, 235, 0.6)',
+                                    'rgba(255, 206, 86, 0.6)',
+                                    'rgba(75, 192, 192, 0.6)',
+                                    'rgba(153, 102, 255, 0.6)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: true,
+                            plugins: {
+                                legend: { position: 'bottom' },
+                                title: {
+                                    display: true,
+                                    text: 'Jobs by Status'
+                                }
+                            }
+                        }
+                    });
+                });
+        }
+    </script>
+}

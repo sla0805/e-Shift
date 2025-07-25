@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<header class="bg-light py-4">
+    <div class="container d-flex justify-content-between align-items-center">
+        <h2 class="h5 mb-0"><a asp-area="" asp-controller="Home" asp-action="Index" class="text-decoration-none text-dark">E-shift</a></h2>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="display-3 fw-bold text-primary">e-Shift Household Goods Shifting System</h1>
+        <p class="lead">Manage your logistics operations with ease and efficiency.</p>
+    </div>
+
+    <section class="row justify-content-center text-center">
+        <div class="col-md-8">
+            <h2 class="h3 fw-semibold mb-4">Your Trusted Partner in Relocation</h2>
+            <p class="fs-5 text-muted mb-4">
+                E-shift simplifies the complexities of moving household goods. From packing to delivery, our system provides a seamless and transparent experience, ensuring your belongings arrive safely and on time.
+            </p>
+            <a asp-area="" asp-controller="Account" asp-action="Register" class="btn btn-primary btn-lg me-3">Get Started Now</a>
+
+        </div>
+    </section>
+
+    <hr class="my-5">
+
+    <section class="row row-cols-1 row-cols-md-3 g-4 text-center">
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <i class="bi bi-truck-flatbed icon-large text-info mb-3"></i>
+                    <h3 class="h5 card-title">Efficient Tracking</h3>
+                    <p class="card-text text-muted">Keep an eye on your shipment every step of the way with real-time updates.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <i class="bi bi-box-seam icon-large text-success mb-3"></i>
+                    <h3 class="h5 card-title">Secure Handling</h3>
+                    <p class="card-text text-muted">Your goods are handled with the utmost care and professionalism.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <i class="bi bi-people-fill icon-large text-warning mb-3"></i>
+                    <h3 class="h5 card-title">Dedicated Support</h3>
+                    <p class="card-text text-muted">Our team is ready to assist you with any queries or concerns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="border-top footer text-muted py-3 mt-5">
+    <div class="container text-center">
+        &copy; 2025 E-shift. All rights reserved. <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
+    </div>
+</footer>
+
+@section Scripts {
+    <style>
+        .icon-large {
+            font-size: 3rem; /* Adjust icon size as needed */
+        }
+       
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .text-primary {
+            color: #007bff !important; /* Bootstrap primary color */
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-outline-secondary {
+            border-color: #6c757d;
+            color: #6c757d;
+        }
+
+            .btn-outline-secondary:hover {
+                background-color: #6c757d;
+                color: white;
+            }
+    </style>
+}

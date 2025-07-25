@@ -1,0 +1,139 @@
+﻿@model PaginatedList<eShift.Models.TransportAssignment>
+
+@{
+    ViewData["Title"] = "Transport Assignments";
+}
+
+<h2>Transport Assignments</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-controller="TransportAssignments" asp-action="Index" method="get" class="mb-4">
+    <div class="input-group">
+        <input type="text" class="form-control" name="searchString" value="@ViewData["CurrentFilter"]" placeholder="Search by ID, Job, Driver, Assistant, Vehicle..." />
+        <button type="submit" class="btn btn-outline-secondary">
+            <i class="bi bi-search"></i> Search
+        </button>
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-x-lg"></i> Clear
+        </a>
+    </div>
+</form>
+
+<p>
+    <a asp-action="DownloadCsv"
+       asp-route-searchString="@ViewData["CurrentFilter"]"
+       asp-route-sortOrder="@ViewData["CurrentSort"]">Download Current View CSV</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>  
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["TransportIdSortParm"]"
+                   asp-route-searchString="@ViewData["CurrentFilter"]">Transport ID</a>
+            </th>
+            <th>  
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["JobSortParm"]"
+                   asp-route-searchString="@ViewData["CurrentFilter"]">Job</a>
+            </th>
+            <th>   
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["DriverSortParm"]"
+                   asp-route-searchString="@ViewData["CurrentFilter"]">Driver</a>
+            </th>
+            <th>
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["AssistantSortParm"]"
+                   asp-route-searchString="@ViewData["CurrentFilter"]">Assistant</a>
+            </th>
+            <th>
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["VehicleSortParm"]"
+                   asp-route-searchString="@ViewData["CurrentFilter"]">Vehicle</a>
+            </th>
+            <th></th> 
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TransportId</td>
+                <td>
+                    Job @item.Job?.JobId: @item.Job?.PickupLocation to @item.Job?.DeliveryLocation
+                    @if (item.Job == null)
+                    {
+                        <span class="text-muted">(No Job Assigned)</span>
+                    }
+                </td>
+                <td>
+                    @item.Driver?.DriverName
+                    @if (item.Driver == null)
+                    {
+                        <span class="text-muted">(No Driver Assigned)</span>
+                    }
+                </td>
+                <td>
+                    @item.Assistant?.AssistantName
+                    @if (item.Assistant == null)
+                    {
+                        <span class="text-muted">(No Assistant Assigned)</span>
+                    }
+                </td>
+                <td>
+                    @if (item.Vehicle != null)
+                    {
+                        @item.Vehicle.VehicleModel
+                        @: (@item.Vehicle.VehicleLicensenum)
+                    }
+                    else
+                    {
+                        <span class="text-muted">(No Vehicle Assigned)</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.TransportId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.TransportId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.TransportId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a asp-controller="Admin" asp-action="Index">Back to Admin Dashboard</a>
+</p>
+
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+            <a class="page-link" asp-action="Index"
+               asp-route-pageNumber="@(Model.PageIndex - 1)"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-searchString="@ViewData["CurrentFilter"]">Previous</a>
+        </li>
+
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                <a class="page-link" asp-action="Index"
+                   asp-route-pageNumber="@i"
+                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                   asp-route-searchString="@ViewData["CurrentFilter"]">@i</a>
+            </li>
+        }
+
+        <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+            <a class="page-link" asp-action="Index"
+               asp-route-pageNumber="@(Model.PageIndex + 1)"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-searchString="@ViewData["CurrentFilter"]">Next</a>
+        </li>
+    </ul>
+</nav>

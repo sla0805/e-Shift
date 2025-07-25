@@ -1,0 +1,81 @@
+﻿@model eShift.Models.Load
+@{
+    ViewData["Title"] = "Add Items to Your Delivery";
+    var productList = ViewBag.ProductList as List<SelectListItem>;
+    var existingLoads = ViewBag.ExistingLoads as List<eShift.Models.Load>;
+}
+
+<h2 class="mb-4">Add Items to Your Delivery</h2>
+
+<form asp-action="AddLoad" method="post">
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.JobId)
+
+    <div class="form-group mb-3">
+        <label class="form-label">Product</label>
+        @Html.DropDownListFor(m => m.ProductId, productList, "-- Select Product --", new { @class = "form-select" })
+        @Html.ValidationMessageFor(m => m.ProductId, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group mb-3">
+        @Html.LabelFor(m => m.ProductQuantity)
+        @Html.TextBoxFor(m => m.ProductQuantity, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group mb-3">
+        @Html.LabelFor(m => m.ProductContainer)
+        @Html.TextBoxFor(m => m.ProductContainer, new { @class = "form-control" })
+        <small class="form-text text-muted">
+            Specify how many packages the items will be divided and packed into.
+        </small>
+    </div>
+
+    <div class="form-group mb-3">
+        @Html.LabelFor(m => m.LoadWeightKg)
+        @Html.TextBoxFor(m => m.LoadWeightKg, new { @class = "form-control" })
+        <small class="form-text text-muted">Approximate total weight of the items(Kg).</small>
+    </div>
+
+    <div class="form-group mb-3">
+        @Html.LabelFor(m => m.Comment)
+        @Html.TextAreaFor(m => m.Comment, new { @class = "form-control", rows = 2 })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+<hr class="my-4" />
+
+@if (existingLoads != null && existingLoads.Count > 0)
+{
+    <h4>Existing Loads for this Job</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Container</th>
+                <th>Weight (kg)</th>
+                <th>Comment</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var load in existingLoads)
+            {
+                <tr>
+                    <td>@load.Product?.ProductName</td>
+                    <td>@load.ProductQuantity</td>
+                    <td>@load.ProductContainer</td>
+                    <td>@load.LoadWeightKg</td>
+                    <td>@load.Comment</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<div class="mt-4 d-flex gap-3">
+    <a asp-action="FinishDelivery" asp-route-jobId="@Model.JobId" class="btn btn-success">Finish Delivery (Back To Dashboard)</a>
+    <a asp-action="ViewMyJobs" class="btn btn-secondary">Finish Update (Back to Your Delivery)</a>
+</div>
+

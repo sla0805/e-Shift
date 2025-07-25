@@ -1,0 +1,23 @@
+﻿@model eShift.Models.Load
+
+@{
+    ViewData["Title"] = "Delete Load";
+}
+
+<div class="container mt-4">
+    <h2 class="text-danger mb-4">Are you sure you want to delete this item?</h2>
+
+    <div class="card p-4">
+        <h4 class="text-secondary">Item: @Model.Product?.ProductName</h4>
+        <p><strong>Quantity:</strong> @Model.ProductQuantity</p>
+        <p><strong>Container:</strong> @Model.ProductContainer</p>
+        <p><strong>Weight (kg):</strong> @Model.LoadWeightKg</p>
+        <p><strong>Comment:</strong> @Model.Comment</p>
+
+        <form asp-action="DeleteLoad" method="post">
+            <input type="hidden" asp-for="LoadId" />
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a asp-action="ViewMyJobs" asp-route-id="@Model.JobId" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
