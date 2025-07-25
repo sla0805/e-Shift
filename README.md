@@ -1,7 +1,5 @@
 # e-Shift
-System Source Code
-
-Setup Guide
+## Setup Guide
 
 ## 1. Edit the Connection String
 Open **`appsettings.json`** and update inside the `DefaultConnection` string to point to your local SQL Server instance.
@@ -20,5 +18,7 @@ Run the following command in Package Manager Console:
 
 ## Notes
 There is an admin account initally setup in the database.
+
 Email: superadmin@gmail.com
+
 Password: Asd123!@#
