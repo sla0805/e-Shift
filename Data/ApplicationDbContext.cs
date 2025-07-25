@@ -34,17 +34,3 @@ namespace eShift.Data
         }
     }
 }
-// protected override void OnModelCreating(ModelBuilder modelBuilder)
-// {
-//     // Example for one-to-one or one-to-zero-or-one between Job and TransportAssignment
-//     modelBuilder.Entity<TransportAssignment>()
-//         .HasOne(ta => ta.Job)
-//         .WithOne(j => j.TransportAssignment) // Assuming Job has a TransportAssignment navigation prop
-//         .HasForeignKey<TransportAssignment>(ta => ta.JobId); // JobId is FK for TransportAssignment
-
-//     // Example for other one-to-many relationships (Driver to TransportAssignments)
-//     modelBuilder.Entity<TransportAssignment>()
-//         .HasOne(ta => ta.Driver)
-//         .WithMany(d => d.TransportAssignments) // Assuming Driver has ICollection<TransportAssignment>
-//         .HasForeignKey(ta => ta.DriverId);
-// }

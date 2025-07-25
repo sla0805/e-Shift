@@ -16,5 +16,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
+	<PropertyGroup>
+		<IdentityUIFrameworkVersion></IdentityUIFrameworkVersion>
+	</PropertyGroup>
 
+	<ItemGroup>
+		<AssemblyAttribute Remove="Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute" />
+	</ItemGroup>
 </Project>
